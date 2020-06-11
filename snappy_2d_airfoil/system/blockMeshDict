@@ -20,7 +20,8 @@ yDim    20;
 zDim    0.04;
 
 xMin    #calc "-($xDim / 2.0)";
-xMax    #calc "($xDim / 2.0)";
+//xMax    #calc "($xDim / 2.0)";
+xMax    20;
 yMin    #calc "-($yDim / 2.0)";
 yMax    #calc "($yDim / 2.0)";
 //zMin    #calc "-$zDim";
@@ -89,15 +90,24 @@ boundary
         );
     }
 
-    frontAndBack
+    front
     {
         type empty;
         faces
         (
             (0 3 2 1)
+        );
+    }
+
+    back
+    {
+        type empty;
+        faces
+        (
             (4 5 6 7)
         );
     }
+
 );
 
 mergePatchPairs
